@@ -6,7 +6,7 @@
 #    By: pserre-s <priaserre@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 16:51:53 by pserre-s          #+#    #+#              #
-#    Updated: 2025/12/07 01:11:16 by pserre-s         ###   ########.fr        #
+#    Updated: 2025/12/08 23:05:30 by pserre-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,15 +60,18 @@ SRCS_BONUS = ft_lstnew.c \
              ft_lstmap.c
 
 PRINTF_FILES = ft_printf.c ft_printf_functions.c
-
 SRCS_PRINTF = $(addprefix ft_printf/src/, $(PRINTF_FILES))
-SRCS = $(SRCS_LIBFT) $(SRCS_PRINTF)
+
+GNL_FILES = get_next_line.c get_next_line_utils.c
+SRCS_GNL = $(addprefix get_next_line/src/, $(GNL_FILES))
+
+SRCS = $(SRCS_LIBFT) $(SRCS_PRINTF) $(SRCS_GNL)
 
 OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 OBJS_BONUS = $(SRCS_BONUS:%.c=$(OBJ_DIR)/%.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Ift_printf/include
+CFLAGS = -Wall -Wextra -Werror -Ift_printf/include -Iget_next_line/include
 AR = ar rcs
 RM = rm -f
 
