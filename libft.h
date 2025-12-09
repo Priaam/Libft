@@ -75,7 +75,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 int		ft_lstsize(t_list *lst);
 
 // Printf
-
 int		ft_printf(const char *format, ...);
+
+//
+char	*get_next_line(int fd);
 
 #endif
