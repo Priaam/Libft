@@ -6,7 +6,7 @@
 #    By: pserre-s <priaserre@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 16:51:53 by pserre-s          #+#    #+#              #
-#    Updated: 2025/12/08 23:05:30 by pserre-s         ###   ########.fr        #
+#    Updated: 2025/12/09 01:12:42 by pserre-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 OBJ_DIR = objs
 
-SRCS_LIBFT = ft_isalpha.c \
+LIBFT_FILES = ft_isalpha.c \
        ft_isdigit.c \
        ft_isalnum.c \
        ft_isascii.c \
@@ -49,7 +49,7 @@ SRCS_LIBFT = ft_isalpha.c \
        ft_putendl_fd.c \
        ft_putnbr_fd.c
 
-SRCS_BONUS = ft_lstnew.c \
+LIBFT_BONUS_FILES = ft_lstnew.c \
              ft_lstadd_front.c \
              ft_lstsize.c \
              ft_lstlast.c \
@@ -58,6 +58,9 @@ SRCS_BONUS = ft_lstnew.c \
              ft_lstclear.c \
              ft_lstiter.c \
              ft_lstmap.c
+
+SRCS_LIBFT = $(addprefix src/, $(LIBFT_FILES))
+SRCS_LIBFT_BONUS = $(addprefix src/, $(LIBFT_BONUS_FILES))
 
 PRINTF_FILES = ft_printf.c ft_printf_functions.c
 SRCS_PRINTF = $(addprefix ft_printf/src/, $(PRINTF_FILES))
@@ -68,10 +71,10 @@ SRCS_GNL = $(addprefix get_next_line/src/, $(GNL_FILES))
 SRCS = $(SRCS_LIBFT) $(SRCS_PRINTF) $(SRCS_GNL)
 
 OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
-OBJS_BONUS = $(SRCS_BONUS:%.c=$(OBJ_DIR)/%.o)
+OBJS_BONUS = $(SRCS_LIBFT_BONUS:%.c=$(OBJ_DIR)/%.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Ift_printf/include -Iget_next_line/include
+CFLAGS = -Wall -Wextra -Werror -Iinclude -Ift_printf/include -Iget_next_line/include
 AR = ar rcs
 RM = rm -f
 
