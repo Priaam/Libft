@@ -6,7 +6,7 @@
 #    By: pserre-s <priaserre@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 16:51:53 by pserre-s          #+#    #+#              #
-#    Updated: 2025/12/09 01:12:42 by pserre-s         ###   ########.fr        #
+#    Updated: 2025/12/15 21:04:21 by pserre-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ LIBFT_FILES = ft_isalpha.c \
        ft_putchar_fd.c \
        ft_putstr_fd.c \
        ft_putendl_fd.c \
-       ft_putnbr_fd.c
+       ft_putnbr_fd.c \
+	   ft_free_split.c
 
 LIBFT_BONUS_FILES = ft_lstnew.c \
              ft_lstadd_front.c \
